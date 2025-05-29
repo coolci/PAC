@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement Data Search</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Link to a CSS file (will be created later) -->
+</head>
+<body>
+    <h1>Procurement Data Search</h1>
+
+    <div class="search-filters">
+        <h2>Filters</h2>
+        <form id="searchForm">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="category">Category:</label>
+                <select id="category" name="category_id">
+                    <option value="">All Categories</option>
+                    <!-- Categories will be populated by JavaScript -->
+                </select>
+            </div>
+            <div>
+                <label for="project_name">Project Name:</label>
+                <input type="text" id="project_name" name="project_name">
+            </div>
+            <div>
+                <label for="purchase_name">Purchase Name:</label>
+                <input type="text" id="purchase_name" name="purchase_name">
+            </div>
+            <div>
+                <label for="district_name">District Name:</label>
+                <input type="text" id="district_name" name="district_name">
+            </div>
+            <div>
+                <label for="procurement_method">Procurement Method:</label>
+                <input type="text" id="procurement_method" name="procurement_method">
+            </div>
+            <div>
+                <label for="publish_date_start">Publish Date Start:</label>
+                <input type="date" id="publish_date_start" name="publish_date_start">
+            </div>
+            <div>
+                <label for="publish_date_end">Publish Date End:</label>
+                <input type="date" id="publish_date_end" name="publish_date_end">
+            </div>
+            <!-- Add more filter fields as needed based on API capabilities -->
+            <button type="submit">Search</button>
+            <button type="reset" id="resetButton">Reset Filters</button>
+        </form>
+    </div>
+
+    <div class="results">
+        <h2>Results</h2>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th> <!-- Will need to map category_id to name -->
+                    <th>Publish Date</th>
+                    <th>Project Name</th>
+                    <th>Purchase Name</th>
+                    <th>District</th>
+                    <th>Budget</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody id="resultsBody">
+                <!-- Results will be populated by JavaScript -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevPage" disabled>Previous</button>
+            <span id="pageInfo">Page 1 of 1</span>
+            <button id="nextPage" disabled>Next</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script> <!-- Link to a JavaScript file (will be created later) -->
+</body>
+</html>
